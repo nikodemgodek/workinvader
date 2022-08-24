@@ -1,0 +1,2 @@
+INSERT INTO offers (contract_type, currency, deadline, description, location, max_salary, min_salary, position, skills, work_mode)
+    values (0, 0, 'Wed, 4 Jul 2001 12:08:56', 'test', 'Wroclaw', 12000, 7000, 'Java Developer', 'Java 8, Spring Boot, Docker', 0);
