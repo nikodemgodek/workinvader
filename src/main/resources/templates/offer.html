@@ -12,24 +12,21 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: #6c3d5e">
   <div class="container-fluid">
-    <!-- Toggle button -->
-
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item ms-3">
-        <a class="nav-link fw-bold" href="/">Oferty pracy</a>
+        <a class="nav-link text-white" href="/">Oferty pracy</a>
       </li>
       <li class="nav-item ms-3">
-        <a class="nav-link fw-bold" href="#">Brand Stories</a>
+        <a class="nav-link text-white" href="#"></a>
       </li>
       <li class="nav-item ms-3">
-        <a class="nav-link fw-bold" href="#">Projects</a>
+        <a class="nav-link text-white" href="#"></a>
       </li>
     </ul>
     <div class="d-flex align-items-center">
-      <a class="nav-link text-secondary fw-bold">Dodaj ogłoszenie</a>
+      <a class="nav-link text-white" href="/create">Dodaj ogłoszenie</a>
     </div>
   </div>
 </nav>
@@ -38,9 +35,9 @@
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body" style="margin: 0; padding: 0;" th:each="advertisement : ${ad}">
-          <h5 class="card-title ps-5 mt-5" th:text="${advertisement.position}">Junior Java Developer</h5>
-          <span class="ps-5" style="font-size: 14px;"><span th:text="${advertisement.companyName} + ', ' + ${advertisement.location} + ' '">Nokia, Szybowcowa 2, Wrocław</span> <span th:text="${advertisement.workMode}" class="badge bg-primary ms-1">Remote</span></span>
-          <p style="font-size: 14px;" class="card-text ps-5"><span class="fw-bold" th:text="${advertisement.minSalary} + ' - ' + ${advertisement.maxSalary} + ' ' + ${advertisement.currency} + ', '"></span><span th:text="${advertisement.contractType}"></span></p>
+          <h5 class="card-title ps-5 mt-5" th:text="${advertisement.positionName}">Junior Java Developer</h5>
+          <span class="ps-5" style="font-size: 14px;"><span th:text="${advertisement.companyName} + ', ' + ${advertisement.companyLocationCity} + ', ' + ${advertisement.companyLocationStreet} + ', ' + ${advertisement.companyLocationBuildingNo}'">Nokia, Szybowcowa 2, Wrocław</span> <span th:text="${advertisement.employmentMode}" class="badge bg-primary ms-1">Remote</span></span>
+          <p style="font-size: 14px;" class="card-text ps-5"><span class="fw-bold" th:text="${advertisement.minSalaryGross} + ' - ' + ${advertisement.maxSalaryGross} + ' ' + ${advertisement.salaryCurrency} + ', '"></span><span th:text="${advertisement.contractType}"></span></p>
           <div class="card mt-5">
             <div class="card-header">
               Tech stack
@@ -106,7 +103,7 @@
               Description <span class="badge bg-secondary">Online Interview</span>
             </div>
             <div class="card-body">
-              <p class="card-text" th:text="${advertisement.description}">With supporting text below as a natural lead-in to additional content.</p>
+              <!--<p class="card-text" th:text="${advertisement.description}">With supporting text below as a natural lead-in to additional content.</p>-->
             </div>
           </div>
 
@@ -116,6 +113,46 @@
       </div>
     </div>
   </div>
+</div>
+<div class="container">
+  <footer class="row row-cols-5 py-5 my-5 border-top">
+    <div class="col">
+      <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <p class="text-muted">Workly.pl © 2022</p>
+    </div>
+
+    <div class="col">
+
+    </div>
+
+    <div class="col">
+      <h5 class="mb-4">Produkt</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Oferty</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Panel pracodawcy</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cennik</a></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h5 class="mb-4">Zasoby</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pomoc</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Regulamin</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Polityka prywatności</a></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h5 class="mb-4">O nas</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">O nas</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kariera</a></li>
+      </ul>
+    </div>
+  </footer>
 </div>
 
 <!-- Navbar -->

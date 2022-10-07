@@ -55,15 +55,6 @@ public class AdvertisementController {
         System.out.println(tomorrow);
         model.addAttribute("minimumDate", tomorrow);
         model.addAttribute("ad", advertisement);
-
-        List<String> listCurrencies = Arrays.asList("PLN", "EUR", "USD");
-        model.addAttribute("listCurrencies", listCurrencies);
-
-        List<String> listWorkMode = Arrays.asList("Fully Remote", "Hybrid", "Office");
-        model.addAttribute("listWorkMode", listWorkMode);
-
-        List<String> listContracts = Arrays.asList("Contract of employment", "B2B", "Contract of work", "Contract of mandate");
-        model.addAttribute("listContracts", listContracts);
         return "createAdvertisement";
     }
 
@@ -71,13 +62,7 @@ public class AdvertisementController {
     public String checkPersonInfo(@Valid @ModelAttribute("ad") Advertisement ad, BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) {
-            List<String> listCurrencies = Arrays.asList("PLN", "EUR", "USD");
-            model.addAttribute("listCurrencies", listCurrencies);
-
-            List<String> listContracts = Arrays.asList("Contract of employment", "B2B", "Contract of work", "Contract of mandate");
-            model.addAttribute("listContracts", listContracts);
             return "createAdvertisement";
-
         }else{
             System.out.println(ad);
             advertisementService.save(ad);

@@ -1,71 +1,51 @@
 package com.example.doupa.demo.model;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "offers")
 public class Advertisement {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Size(max = 30, message = "Company name can have maximum 30 digits.")
-    @Size(min = 2, message = "Company name must have minimum 2 digits.")
+    @NotEmpty(message = "Company name is required")
     private String companyName;
+    @NotBlank(message = "Company type is required")
+    private String companyType;
+    @NotNull(message = "Company size is required")
+    private Integer companySize;
+    @NotBlank(message = "Company industry is required")
+    private String companyIndustry;
+    @NotEmpty(message = "Company website is required")
+    private String companyWebsite;
+    @NotEmpty(message = "Position name is required")
 
-    @Size(min = 10, message = "Position name must have minimum 10 digits.")
-    private String position;
+    private String positionName;
+    @NotBlank(message = "Position level is required.")
+    private String positionLevel;
+    @NotBlank(message = "Employment type is required")
+    private String employmentType;
+    @NotBlank(message = "Employment mode is required")
+    private String employmentMode;
+    @NotNull(message = "Minimum salary is required")
+    private Integer minSalaryGross;
+    @NotNull(message = "Maximum salary is required")
 
-    @NotEmpty(message = "Skills field is necessary.")
-    private String skills;
+    private Integer maxSalaryGross;
+    @NotBlank(message = "Currency is required")
+    private String salaryCurrency;
+    @NotEmpty(message = "City is required")
+    private String companyLocationCity;
+    @NotEmpty(message = "Street is required")
 
+    private String companyLocationStreet;
+    @NotEmpty(message = "Building number is required")
 
-    private String contractType;
-
-    @NotNull(message = "Minimum salary field is necessary.")
-    private Integer minSalary;
-
-    @NotNull(message = "Maximum salary field is necessary.")
-    private Integer maxSalary;
-
-    private String currency;
-
-    @NotEmpty(message = "Location field is necessary.")
-    private String location;
-
-    @NotEmpty(message = "About position field is necessary.")
-    @Size(min = 30, message = "About position field must have minimum 30 digits.")
-    private String description;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date deadline;
-
-    private String workMode;
-
-    public Advertisement() {
-
-    }
-    public Advertisement(Long id, String companyName, String position, String skills, String contractType, Integer minSalary, Integer maxSalary, String currency, String location, String description, Date deadline, String workMode) {
-        this.id = id;
-        this.companyName = companyName;
-        this.position = position;
-        this.skills = skills;
-        this.contractType = contractType;
-        this.minSalary = minSalary;
-        this.maxSalary = maxSalary;
-        this.currency = currency;
-        this.location = location;
-        this.description = description;
-        this.deadline = deadline;
-        this.workMode = workMode;
-    }
+    private String companyLocationBuildingNo;
 
     public Long getId() {
         return id;
@@ -83,100 +63,159 @@ public class Advertisement {
         this.companyName = companyName;
     }
 
-    public String getPosition() {
-        return position;
+    public String getCompanyType() {
+        return companyType;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setCompanyType(String companyType) {
+        this.companyType = companyType;
     }
 
-    public String getSkills() {
-        return skills;
+    public Integer getCompanySize() {
+        return companySize;
     }
 
-    public void setSkills(String skills) {
-        this.skills = skills;
+    public void setCompanySize(Integer companySize) {
+        this.companySize = companySize;
     }
 
-    public String getContractType() {
-        return contractType;
+    public String getCompanyIndustry() {
+        return companyIndustry;
     }
 
-    public void setContractType(String contractType) {
-        this.contractType = contractType;
+    public void setCompanyIndustry(String companyIndustry) {
+        this.companyIndustry = companyIndustry;
     }
 
-    public Integer getMinSalary() {
-        return minSalary;
+    public String getCompanyWebsite() {
+        return companyWebsite;
     }
 
-    public void setMinSalary(Integer minSalary) {
-        this.minSalary = minSalary;
+    public void setCompanyWebsite(String companyWebsite) {
+        this.companyWebsite = companyWebsite;
     }
 
-    public Integer getMaxSalary() {
-        return maxSalary;
+    public String getPositionName() {
+        return positionName;
     }
 
-    public void setMaxSalary(Integer maxSalary) {
-        this.maxSalary = maxSalary;
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
     }
 
-    public String getCurrency() {
-        return currency;
+    public String getPositionLevel() {
+        return positionLevel;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public void setPositionLevel(String positionLevel) {
+        this.positionLevel = positionLevel;
     }
 
-    public String getLocation() {
-        return location;
+    public String getEmploymentType() {
+        return employmentType;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
     }
 
-    public String getDescription() {
-        return description;
+    public String getEmploymentMode() {
+        return employmentMode;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setEmploymentMode(String employmentMode) {
+        this.employmentMode = employmentMode;
     }
 
-    public Date getDeadline() {
-        return deadline;
+    public Integer getMinSalaryGross() {
+        return minSalaryGross;
     }
 
-    public void setDeadline(Date deadline) {
-        this.deadline = deadline;
+    public void setMinSalaryGross(Integer minSalaryGross) {
+        this.minSalaryGross = minSalaryGross;
     }
 
-    public String getWorkMode() {
-        return workMode;
+    public Integer getMaxSalaryGross() {
+        return maxSalaryGross;
     }
 
-    public void setWorkMode(String workMode) {
-        this.workMode = workMode;
+    public void setMaxSalaryGross(Integer maxSalaryGross) {
+        this.maxSalaryGross = maxSalaryGross;
+    }
+
+    public String getSalaryCurrency() {
+        return salaryCurrency;
+    }
+
+    public void setSalaryCurrency(String salaryCurrency) {
+        this.salaryCurrency = salaryCurrency;
+    }
+
+    public String getCompanyLocationCity() {
+        return companyLocationCity;
+    }
+
+    public void setCompanyLocationCity(String companyLocationCity) {
+        this.companyLocationCity = companyLocationCity;
+    }
+
+    public String getCompanyLocationStreet() {
+        return companyLocationStreet;
+    }
+
+    public void setCompanyLocationStreet(String companyLocationStreet) {
+        this.companyLocationStreet = companyLocationStreet;
+    }
+
+    public String getCompanyLocationBuildingNo() {
+        return companyLocationBuildingNo;
+    }
+
+    public void setCompanyLocationBuildingNo(String companyLocationBuildingNo) {
+        this.companyLocationBuildingNo = companyLocationBuildingNo;
+    }
+
+    public Advertisement(String companyName, String companyType, Integer companySize, String companyIndustry, String companyWebsite, String positionName, String positionLevel, String employmentType, String employmentMode, Integer minSalaryGross, Integer maxSalaryGross, String salaryCurrency, String companyLocationCity, String companyLocationStreet, String companyLocationBuildingNo) {
+        this.companyName = companyName;
+        this.companyType = companyType;
+        this.companySize = companySize;
+        this.companyIndustry = companyIndustry;
+        this.companyWebsite = companyWebsite;
+        this.positionName = positionName;
+        this.positionLevel = positionLevel;
+        this.employmentType = employmentType;
+        this.employmentMode = employmentMode;
+        this.minSalaryGross = minSalaryGross;
+        this.maxSalaryGross = maxSalaryGross;
+        this.salaryCurrency = salaryCurrency;
+        this.companyLocationCity = companyLocationCity;
+        this.companyLocationStreet = companyLocationStreet;
+        this.companyLocationBuildingNo = companyLocationBuildingNo;
+    }
+
+    public Advertisement() {
+
     }
 
     @Override
     public String toString() {
         return "Advertisement{" +
-                "companyName='" + companyName + '\'' +
-                ", position='" + position + '\'' +
-                ", skills='" + skills + '\'' +
-                ", contractType=" + contractType +
-                ", minSalary=" + minSalary +
-                ", maxSalary=" + maxSalary +
-                ", currency=" + currency +
-                ", location='" + location + '\'' +
-                ", description='" + description + '\'' +
-                ", deadline=" + deadline +
-                ", workMode=" + workMode +
+                "id=" + id +
+                ", companyName='" + companyName + '\'' +
+                ", companyType='" + companyType + '\'' +
+                ", companySize=" + companySize +
+                ", companyIndustry='" + companyIndustry + '\'' +
+                ", companyWebsite='" + companyWebsite + '\'' +
+                ", positionName='" + positionName + '\'' +
+                ", positionLevel='" + positionLevel + '\'' +
+                ", employmentType='" + employmentType + '\'' +
+                ", employmentMode='" + employmentMode + '\'' +
+                ", minSalaryGross=" + minSalaryGross +
+                ", maxSalaryGross=" + maxSalaryGross +
+                ", salaryCurrency=" + salaryCurrency +
+                ", companyLocationCity='" + companyLocationCity + '\'' +
+                ", companyLocationStreet='" + companyLocationStreet + '\'' +
+                ", companyLocationBuildingNo='" + companyLocationBuildingNo + '\'' +
                 '}';
     }
 }

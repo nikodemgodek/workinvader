@@ -40,28 +40,25 @@
     ======================================================== -->
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Toggle button -->
-
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item ms-3">
-                <a class="nav-link fw-bold" href="/">Oferty pracy</a>
-            </li>
-            <li class="nav-item ms-3">
-                <a class="nav-link fw-bold" href="#"></a>
-            </li>
-            <li class="nav-item ms-3">
-                <a class="nav-link fw-bold" href="#"></a>
-            </li>
-        </ul>
-        <div class="d-flex align-items-center">
-            <a class="nav-link text-secondary fw-bold" href="/create">Dodaj ogłoszenie</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: #6c3d5e">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-3">
+                    <a class="nav-link text-white" href="/">Oferty pracy</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link text-white" href="#"></a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link text-white" href="#"></a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <a class="nav-link text-white" href="/create">Dodaj ogłoszenie</a>
+            </div>
         </div>
-    </div>
-</nav>
-    <div class="container p-5">
+    </nav>
+    <div class="container p-5 mt-5">
       <div class="card text-center">
           <div class="card-header">
               <i style="font-size: 50px;" class="bi bi-check-circle-fill fa-8x"></i>
@@ -69,10 +66,50 @@
           <div class="card-body">
               <h5 class="card-title">Success!</h5>
               <p class="card-text">Your job advertisement has been added. You can visit it at this <a href="/">link</a>.</p>
-              <a href="/" class="btn btn-primary">Return to main page</a>
+              <a style="font-size: 12px;" href="/" class="btn btn-primary">Return to main page</a>
           </div>
       </div>
   </div>
+    <div class="container">
+        <footer class="row row-cols-5 py-5 my-5 border-top">
+            <div class="col">
+                <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <p class="text-muted">Workly.pl © 2022</p>
+            </div>
+
+            <div class="col">
+
+            </div>
+
+            <div class="col">
+                <h5 class="mb-4">Produkt</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Oferty</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Panel pracodawcy</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cennik</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h5 class="mb-4">Zasoby</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pomoc</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Regulamin</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Polityka prywatności</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h5 class="mb-4">O nas</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">O nas</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kariera</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 
 
   <!-- Vendor JS Files -->
