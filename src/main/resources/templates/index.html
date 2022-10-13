@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
   <title>Hello, world!</title>
 </head>
-<body style="background: #fafafa;">
+<body style="background: #fafafa; margin-top: 6%;">
 <header id="menuHolder">
   <div role="navigation" class="fixed-top border-bottom border-top" id="mainNavigation" style="z-index: 1100">
     <div class="flexMain">
@@ -63,14 +63,14 @@
     </div>
   </div>
 </header>
-<div class="fixed-top container p-5 mt-5" style="background: #fafafa;">
+<div class="container p-5" style="background: #fafafa;">
   <div class="row">
     <div class="col-sm-6 mb-3">
       <h6>Job: All offers - <span th:text="${entryCount}"></span> offers available</h6>
     </div>
   </div>
 </div>
-<div class="container p-5 mt-5" style="background: #fafafa;">
+<div class="container" style="background: #fafafa;">
   <div class="row">
     <div class="col-sm-12">
       <div class="card mb-2" th:each="advertisement : ${advertisements}">
