@@ -17,17 +17,20 @@
       <div class="flex2">
         <button class="whiteLink siteLink" style="border-right:1px solid #eaeaea" onclick="menuToggle()"><i class="fas fa-bars me-2"></i> Menu</button>
       </div>
-      <div class="flex3 text-center" id="siteBrand">
+      <a href="/" style="text-decoration: none;"><div class="flex3 text-center" id="siteBrand">
         planetjobs
       </div>
+      </a>
 
       <div class="flex2 text-end d-block d-md-none">
         <button class="whiteLink siteLink"><i class="fas fa-search"></i></button>
       </div>
 
       <div class="flex2 text-end d-none d-md-block">
-        <button class="whiteLink siteLink">REGISTER</button>
-        <button class="blackLink siteLink">Login</button>
+        <a href="/create"><button class="whiteLink siteLink">Post a job</button></a>
+        <a sec:authorize="isAnonymous()" href="/register"><button class="whiteLink siteLink">Sign up</button></a>
+        <a sec:authorize="isAnonymous()" href="/login"><button class="blackLink siteLink">Sign in</button></a>
+        <a sec:authorize="isAuthenticated()" href="/account"><button class="blackLink siteLink">Account</button></a>
       </div>
     </div>
   </div>
@@ -100,7 +103,7 @@
         <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         </a>
-        <p class="text-muted">Workly.pl © 2022</p>
+        <p class="text-muted">planetjobs.net © 2022</p>
       </div>
 
       <div class="col">
