@@ -71,12 +71,15 @@
   </div>
 </div>
 <div class="container" style="background: #fafafa;">
-  <div class="row">
+  <div class="row p-3">
     <div class="col-sm-12">
       <div class="card mb-2" th:each="advertisement : ${advertisements}">
         <a style="text-decoration: none;" th:href="${'/offers/' + {advertisement.id}}">
-          <div class="card-body row">
-            <div class="col-sm-8">
+          <div class="card-body row p-3">
+            <div class="col-sm-1">
+              <img class="responsive rounded" th:src="*{'data:image/jpeg;base64,' + {advertisement.image}}" style="width: 100%; height: 100%;"/>
+            </div>
+            <div class="col-sm-3">
               <h5 class="card-title text-start" th:text="${advertisement.positionName}">Junior Java Developer</h5>
               <div class="row">
                 <div class="col-sm-auto">
@@ -87,8 +90,7 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-sm-4">
+            <div class="col-sm-8">
               <h5 class="card-title text-end text-primary"><span th:text="${advertisement.minSalaryGross}">4000</span> - <span th:text="${advertisement.maxSalaryGross}">6000</span> <span class="text-dark" th:text="${advertisement.salaryCurrency}">PLN</span></h5>
               <span class="card-subtitle mb-2 badge rounded-pill bg-dark float-end">New</span>
             </div>

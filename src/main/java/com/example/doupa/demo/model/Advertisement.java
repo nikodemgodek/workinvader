@@ -209,4 +209,27 @@ public class Advertisement {
     public void setImage(String image) {
         this.image = image;
     }
+
+    @Override
+    public String toString() {
+        return "Advertisement{" +
+                "id=" + id +
+                ", companyName='" + companyName + '\'' +
+                ", companyType='" + companyType + '\'' +
+                ", companySize=" + companySize +
+                ", companyIndustry='" + companyIndustry + '\'' +
+                ", companyWebsite='" + companyWebsite + '\'' +
+                ", positionName='" + positionName + '\'' +
+                ", positionLevel='" + positionLevel + '\'' +
+                ", employmentType='" + employmentType + '\'' +
+                ", employmentMode='" + employmentMode + '\'' +
+                ", minSalaryGross=" + minSalaryGross +
+                ", maxSalaryGross=" + maxSalaryGross +
+                ", salaryCurrency='" + salaryCurrency + '\'' +
+                ", companyLocationCity='" + companyLocationCity + '\'' +
+                ", companyLocationStreet='" + companyLocationStreet + '\'' +
+                ", companyLocationBuildingNo='" + companyLocationBuildingNo + '\'' +
+                ", image='" + image + '\'' +
+                '}';
+    }
 }

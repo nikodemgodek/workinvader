@@ -69,6 +69,7 @@
       <div class="card">
         <div class="card-body" style="margin: 0; padding: 0;" th:each="advertisement : ${ad}">
           <h5 class="card-title ps-5 mt-5" th:text="${advertisement.positionName}">Junior Java Developer</h5>
+          <img th:src="*{'data:image/jpeg;base64,' + {advertisement.image}}" style="width: 100px; height: 100px;"/>
           <span class="ps-5" style="font-size: 14px;"><span th:text="${advertisement.companyName} + ', ' + ${advertisement.companyLocationCity} + ', ' + ${advertisement.companyLocationStreet} + ', ' + ${advertisement.companyLocationBuildingNo}">Nokia, Szybowcowa 2, Wrocław</span> <span th:text="${advertisement.employmentMode}" class="badge bg-primary ms-1">Remote</span></span>
           <p style="font-size: 14px;" class="card-text ps-5"><span class="fw-bold" th:text="${advertisement.minSalaryGross} + ' - ' + ${advertisement.maxSalaryGross} + ' ' + ${advertisement.salaryCurrency} + ', '"></span><span th:text="${advertisement.employmentType}"></span></p>
           <div class="card mt-5">
