@@ -71,7 +71,7 @@
     <h3>Posting a new job</h3>
   </div>
 </div>
-<form id="form" action="#" th:action="@{/create}" method="post" th:object="${ad}">
+<form id="form" action="#" th:action="@{/create}" method="post" th:object="${ad}" enctype="multipart/form-data">
   <div class="container">
     <div class="row mb-3 mt-5">
       <h5>Informacje o firmie</h5>
@@ -239,6 +239,12 @@
           <label for="companyLocationBuildingNo" class="form-label">Numer budynku</label>
           <input type="text" class="form-control" id="companyLocationBuildingNo" field="*{companyLocationBuildingNo}" name="companyLocationBuildingNo">
           <small style="color:red" th:if="${#fields.hasErrors('companyLocationBuildingNo')}" th:errors="*{companyLocationBuildingNo}">Error</small>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="mb-3">
+          <label for="file" class="form-label">choose file</label>
+          <input type="file" class="form-control" id="file" name="file">
         </div>
       </div>
     </div>

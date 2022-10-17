@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
@@ -59,13 +60,13 @@ public class AdvertisementController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String checkPersonInfo(@Valid @ModelAttribute("ad") Advertisement ad, BindingResult bindingResult, Model model) {
+    public String checkPersonInfo(@Valid @ModelAttribute("ad") Advertisement ad, BindingResult bindingResult, Model model, @RequestParam("file") MultipartFile file) {
 
         if (bindingResult.hasErrors()) {
             return "createAdvertisement";
         }else{
             System.out.println(ad);
-            advertisementService.save(ad);
+            advertisementService.saveToDB(file, ad);
             return "create_success";
         }
     }

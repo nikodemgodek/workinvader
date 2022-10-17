@@ -47,6 +47,33 @@ public class Advertisement {
 
     private String companyLocationBuildingNo;
 
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
+
+    public Advertisement(String companyName, String companyType, Integer companySize, String companyIndustry, String companyWebsite, String positionName, String positionLevel, String employmentType, String employmentMode, Integer minSalaryGross, Integer maxSalaryGross, String salaryCurrency, String companyLocationCity, String companyLocationStreet, String companyLocationBuildingNo, String image) {
+        this.companyName = companyName;
+        this.companyType = companyType;
+        this.companySize = companySize;
+        this.companyIndustry = companyIndustry;
+        this.companyWebsite = companyWebsite;
+        this.positionName = positionName;
+        this.positionLevel = positionLevel;
+        this.employmentType = employmentType;
+        this.employmentMode = employmentMode;
+        this.minSalaryGross = minSalaryGross;
+        this.maxSalaryGross = maxSalaryGross;
+        this.salaryCurrency = salaryCurrency;
+        this.companyLocationCity = companyLocationCity;
+        this.companyLocationStreet = companyLocationStreet;
+        this.companyLocationBuildingNo = companyLocationBuildingNo;
+        this.image = image;
+    }
+
+    public Advertisement() {
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -175,47 +202,11 @@ public class Advertisement {
         this.companyLocationBuildingNo = companyLocationBuildingNo;
     }
 
-    public Advertisement(String companyName, String companyType, Integer companySize, String companyIndustry, String companyWebsite, String positionName, String positionLevel, String employmentType, String employmentMode, Integer minSalaryGross, Integer maxSalaryGross, String salaryCurrency, String companyLocationCity, String companyLocationStreet, String companyLocationBuildingNo) {
-        this.companyName = companyName;
-        this.companyType = companyType;
-        this.companySize = companySize;
-        this.companyIndustry = companyIndustry;
-        this.companyWebsite = companyWebsite;
-        this.positionName = positionName;
-        this.positionLevel = positionLevel;
-        this.employmentType = employmentType;
-        this.employmentMode = employmentMode;
-        this.minSalaryGross = minSalaryGross;
-        this.maxSalaryGross = maxSalaryGross;
-        this.salaryCurrency = salaryCurrency;
-        this.companyLocationCity = companyLocationCity;
-        this.companyLocationStreet = companyLocationStreet;
-        this.companyLocationBuildingNo = companyLocationBuildingNo;
+    public String getImage() {
+        return image;
     }
 
-    public Advertisement() {
-
-    }
-
-    @Override
-    public String toString() {
-        return "Advertisement{" +
-                "id=" + id +
-                ", companyName='" + companyName + '\'' +
-                ", companyType='" + companyType + '\'' +
-                ", companySize=" + companySize +
-                ", companyIndustry='" + companyIndustry + '\'' +
-                ", companyWebsite='" + companyWebsite + '\'' +
-                ", positionName='" + positionName + '\'' +
-                ", positionLevel='" + positionLevel + '\'' +
-                ", employmentType='" + employmentType + '\'' +
-                ", employmentMode='" + employmentMode + '\'' +
-                ", minSalaryGross=" + minSalaryGross +
-                ", maxSalaryGross=" + maxSalaryGross +
-                ", salaryCurrency=" + salaryCurrency +
-                ", companyLocationCity='" + companyLocationCity + '\'' +
-                ", companyLocationStreet='" + companyLocationStreet + '\'' +
-                ", companyLocationBuildingNo='" + companyLocationBuildingNo + '\'' +
-                '}';
+    public void setImage(String image) {
+        this.image = image;
     }
 }
