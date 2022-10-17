@@ -46,9 +46,7 @@ public class Advertisement {
     @NotEmpty(message = "Building number is required")
 
     private String companyLocationBuildingNo;
-
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB")
+    
     private String image;
 
     public Advertisement(String companyName, String companyType, Integer companySize, String companyIndustry, String companyWebsite, String positionName, String positionLevel, String employmentType, String employmentMode, Integer minSalaryGross, Integer maxSalaryGross, String salaryCurrency, String companyLocationCity, String companyLocationStreet, String companyLocationBuildingNo, String image) {
