@@ -47,7 +47,6 @@ public class Advertisement {
 
     private String companyLocationBuildingNo;
 
-    @Lob
     @Column(columnDefinition = "MEDIUMBLOB")
     private String image;
 
