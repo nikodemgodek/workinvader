@@ -1,7 +1,10 @@
 package com.example.doupa.demo.model;
 
+import com.example.doupa.demo.validations.EqualPasswords;
+
 import javax.persistence.*;
 
+@EqualPasswords
 @Entity
 @Table(name = "users")
 public class User {
@@ -21,6 +24,9 @@ public class User {
 
     @Column(name = "last_name", nullable = false, length = 20)
     private String lastName;
+
+    private String confirmedPassword;
+
 
     public User() {}
 
@@ -53,6 +59,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getConfirmedPassword() {
+        return confirmedPassword;
+    }
+
+    public void setConfirmedPassword(String confirmedPassword) {
+        this.confirmedPassword = confirmedPassword;
     }
 
     public String getFirstName() {
