@@ -66,7 +66,7 @@
     <div class="row">
         <h3 style="margin-bottom: 5%">Sign up for free</h3>
     </div>
-    <form th:action="@{/process_register}" th:object="${user}"
+    <form th:action="@{/process_register}" th:object="${user}">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address <span style="color:red;">*</span></label>
             <input type="email" th:field="*{email}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
